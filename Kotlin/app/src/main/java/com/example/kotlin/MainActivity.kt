@@ -23,8 +23,16 @@ class MainActivity : AppCompatActivity() {
         //sentenciaWhen()
 
         //Leccion5
-        arrays()
+        //arrays()
 
+        //leccion6
+        //mapas()
+
+        //Lección7
+        //loops()
+
+        //Leccion8
+        nullSafety()
 
 
 
@@ -247,12 +255,110 @@ fun arrays(){
     myArray.clear()
     println(myArray.count())
 
+}
+
+    //MAPAS O DICCIONARIOS
+
+    fun mapas(){
+        /*
+        Aqui vamos a hablar de mapas o diccionarios
+         */
+        // var myMap: Map<String,Int> = mapOf() (no mutable)
+        var myMap: Map<String,Int> = mapOf()
+        println(myMap)
+
+        //Añadir elementos
+        myMap = mutableMapOf("ACM" to 1,"ACA" to 2, "ACP" to 3, "AB" to 4, "ACI" to 5 )
+        println(myMap)
+
+        //Añadir un solo valor
+
+        myMap["ACC"] = 7
+        myMap.put("ACE",8)
+        println(myMap)
+
+        //Actualizar un dato
+        myMap.put("ACI",9)
+        println(myMap)
+
+        //acceso a un dato
+        println(myMap["ACI"])
+
+        //Borrado de datos
+        myMap.remove("ACC")
+        println(myMap)
+
+
+
+    }
+    private fun loops(){
+        val myArray = listOf<String>("Hola","Bienvenidos a mi universo","Go ahead")
+        val myMap = mutableMapOf<String,Int>("Juan" to 1,"Pedro" to 2,"Lucas" to 3, "Santiago" to 4)
+
+        //for
+
+        for (myString in myArray){
+            println(myString)
+        }
+        for (myElements in myMap){
+            println("${myElements.key}-${myElements.value}")
+        }
+// incluye todos los datos en el rango
+        for(x in 0..10){
+            println(x)
+        }
+//no incluye el ultimo dato del rango
+        for(x in 0 until 10){
+            println(x)
+        }
+        for(x in 9 until 30){
+            println(x)
+        }
+        for(x in 0..20 step 2){
+            println(x)
+        }
+        //cuenta regresiva
+        for(x in 20 downTo 1 step 3){
+            println(x)
+        }
+// crear un array con un loop for (step indica el incremento o decremento)
+        val myNumericArray = (0..20 step 4)
+        for (myNum in myNumericArray){
+            println(myNum)
+        }
+        //While
+        var x = 0
+            while (x < 10){
+                println(x)
+                x += 2
+            }
+
+
+
+    }
+fun nullSafety(){
+    //aqui vamos a hablar de seguridad para evitar null exceptions
+    var myString = "MrG"
+    //myString = null esto daria un error de compilacion
+    println(myString)
+
+    var mySafetyString: String? ="MrG null safety"
+    mySafetyString= null
+    println(mySafetyString)
+
+    mySafetyString= "GoAhead"
+    println(mySafetyString)
+
+//Safe Calls
+
+    println(mySafetyString.length)
+
+
+
+   }
 
 
 
 }
 
-
-
-}
 
