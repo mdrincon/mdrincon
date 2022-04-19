@@ -346,12 +346,14 @@ fun nullSafety(){
     mySafetyString= null
     println(mySafetyString)
 
-    mySafetyString= "GoAhead"
+
+    mySafetyString= "GoAhead people"
     println(mySafetyString)
 
-//Safe Calls
+    //Safe Calls
 
-    println(mySafetyString.length)
+
+    println(mySafetyString?.length)
 
 
 
